@@ -137,7 +137,7 @@ function Loading(props: { error: ErrorMsg }) {
 function Input(props: { onChange(value: string): void }) {
   return <div>
     <p>请输入一个四字成语，<wbr />如成功识别：</p>
-    <p>本页面将自动为你<wbr />接龙到“一个顶俩”</p>
+    <p>本页面将自动为你<wbr />接龙到“为所欲为”</p>
     <p><input type='input' onChange={e => props.onChange(e.target.value)} /></p>
   </div>
 }
@@ -157,7 +157,7 @@ function Output(props: { copyText(word: string): () => void, seq: Idiom[] }) {
       <p>没有输出？<wbr />情况可能是以下两种之一：</p>
       <ul>
         <li>不是四字成语，<wbr />或成语在词库中不存在</li>
-        <li>成语存在，<wbr />但是无法接龙到“一个顶俩”</li>
+        <li>成语存在，<wbr />但是无法接龙到“为所欲为”</li>
       </ul>
     </div>
   }
@@ -183,7 +183,7 @@ function App() {
 
   if (Object.keys(state.word).length > 0) {
     return <div className='markdown-body'>
-      <h1>一个顶俩</h1>
+      <h1>为所欲为</h1>
       <Input onChange={value => setSeq(handle(value, state))} />
       <Output seq={seq} copyText={copyText} />
       <Footer />
@@ -191,7 +191,7 @@ function App() {
   } else {
     fetchJson(setState, setError)
     return <div className='markdown-body'>
-      <h1>一个顶俩</h1>
+      <h1>为所欲为</h1>
       <Loading error={error} />
       <Footer />
     </div>
