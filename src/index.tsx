@@ -73,7 +73,7 @@ const indexed = (json: Data[]) => {
       result.word[data.word] = data
     }
   }
-  let pinyins = new Set(['yi'])
+  let pinyins = new Set(['wei'])
   for (let level = 1; pinyins.size > 0; ++level) {
     const newpinyins = new Set<string>()
     pinyins.forEach(pinyin => {
@@ -106,7 +106,7 @@ const handle = (input: string, state: State) => {
       const filtered = next.filter(d => d.level && d.level < level)
       data = filtered[Math.floor(Math.random() * filtered.length)]
     } else {
-      result.push({ word: '一个顶俩', pinyin: 'yī gè dǐng liǎ' })
+      result.push({ word: '为所欲为', pinyin: 'wéi suǒ yù wéi' })
       return result
     }
   }
